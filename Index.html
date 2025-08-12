@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IDECON - Live Exclusiva</title>
+    <!-- Adiciona o CDN do Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            color: #ffffff; /* Cor do texto principal ajustada para branco */
+        }
+        .text-idecon-blue {
+            color: #2e64a1;
+        }
+        .bg-idecon-dark {
+            background-color: #0b1a37;
+        }
+        .bg-idecon-blue {
+            background-color: #2e64a1;
+        }
+        .shadow-idecon {
+            box-shadow: 0 10px 15px -3px rgba(46, 100, 161, 0.5), 0 4px 6px -2px rgba(46, 100, 161, 0.05);
+        }
+        .card-shadow {
+            box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+        }
+        /* Nova classe para o fundo do Hero, com imagem de background e desfoque */
+        .hero-background {
+            position: relative;
+            background-image: url('https://placehold.co/1200x800/1e293b/384a6c?text=Regulacao+e+Protecao+de+Dados');
+            background-size: cover;
+            background-position: center;
+        }
+        /* Pseudo-elemento para o overlay de 70% de desfoque */
+        .hero-background::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: rgba(11, 26, 55, 0.7); /* Overlay escuro com opacidade */
+            backdrop-filter: blur(5px); /* Efeito de desfoque para a área de conteúdo */
+        }
+        /* Estilos do Modal */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            overflow: auto;
+            background-color: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+        }
+        .modal-content {
+            background-color: #0b1a37;
+            margin: 10% auto;
+            padding: 2rem;
+            border-radius: 1rem;
+            max-width: 500px;
+            position: relative;
+        }
+        .close-button {
+            color: #aaa;
+            float: right;
+            font-size: 28px;
+            font-weight: bold;
+            line-height: 20px;
+        }
+        .close-button:hover,
+        .close-button:focus {
+            color: white;
+            text-decoration: none;
+            cursor: pointer;
+        }
+    </style>
+</head>
+<body class="bg-idecon-dark text-white">
+
+    <!-- Header Section -->
+    <header class="py-6 bg-idecon-dark">
+        <div class="container mx-auto px-4 flex justify-between items-center">
+            <!-- IDECON Logo (Placeholder) -->
+            <div class="flex items-center space-x-2">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4ZM10 16.5V7.5L16 12L10 16.5Z" fill="#2e64a1"/>
+                </svg>
+                <span class="text-2xl font-bold text-idecon-blue">IDECON</span>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <main class="hero-background min-h-screen flex items-center justify-center p-4">
+        <div class="container mx-auto max-w-4xl text-center z-10 py-16">
+            <!-- Main Title -->
+            <h1 class="text-3xl sm:text-5xl font-extrabold tracking-tight mb-4 text-white drop-shadow-lg">LIVE EXCLUSIVA</h1>
+            <!-- Subtitle -->
+            <p class="text-lg sm:text-xl font-medium text-gray-300 mb-8 max-w-2xl mx-auto">
+                Os bastidores do congresso internacional que vai mudar o debate sobre:
+            </p>
+
+            <!-- Topic List -->
+            <ul class="text-left text-lg sm:text-xl font-semibold space-y-3 mb-10 max-w-md mx-auto text-white">
+                <li class="flex items-center space-x-2">
+                    <span class="text-idecon-blue text-2xl drop-shadow-sm">◆</span>
+                    <span>Proteção de Dados</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <span class="text-idecon-blue text-2xl drop-shadow-sm">◆</span>
+                    <span>Inteligência Artificial</span>
+                </li>
+                <li class="flex items-center space-x-2">
+                    <span class="text-idecon-blue text-2xl drop-shadow-sm">◆</span>
+                    <span>Cibersegurança</span>
+                </li>
+            </ul>
+
+            <!-- Live Details Card -->
+            <div class="bg-white rounded-xl p-6 md:p-8 card-shadow max-w-lg mx-auto border border-gray-200">
+                <div class="text-center text-gray-800">
+                    <h2 class="text-xl sm:text-2xl font-bold mb-2">QUARTA-FEIRA, 13/08 - 19H</h2>
+                    <p class="text-lg">Acompanhe pelo <strong class="text-idecon-blue">YouTube do IDECON</strong></p>
+                </div>
+            </div>
+
+            <!-- Call to Action Button -->
+            <a href="#" id="openModalBtn" class="mt-10 inline-block bg-idecon-blue hover:bg-sky-600 transition-colors text-white text-lg sm:text-xl font-bold py-4 px-10 rounded-full shadow-lg transform hover:scale-105 transition-transform duration-300">
+                INSCREVER AGORA!!!
+            </a>
+        </div>
+    </main>
+
+    <!-- Speakers Section -->
+    <section class="py-16 bg-idecon-dark text-white">
+        <div class="container mx-auto px-4">
+            <h2 class="text-3xl sm:text-4xl font-bold text-center mb-12">Palestrantes</h2>
+            <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-6">
+                <!-- Speaker Card 1 - Tatiana Kolly Wasilewski Rodrigues -->
+                <div class="text-center">
+                    <div class="w-full h-auto overflow-hidden rounded-full border-4 border-idecon-blue mx-auto mb-4 transform hover:scale-105 transition-transform duration-300">
+                        <img src="images/Tatiana_Kolly_Wasilewski_Rodrigues.png" alt="Tatiana Kolly Wasilewski Rodrigues" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <p class="font-semibold text-lg">Tatiana Kolly Wasilewski Rodrigues</p>
+                </div>
+                <!-- Speaker Card 2 - Benedito Palheta -->
+                <div class="text-center">
+                    <div class="w-full h-auto overflow-hidden rounded-full border-4 border-idecon-blue mx-auto mb-4 transform hover:scale-105 transition-transform duration-300">
+                        <img src="images/Benedito_Palheta.png" alt="Benedito Palheta" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <p class="font-semibold text-lg">Benedito Palheta</p>
+                </div>
+                <!-- Speaker Card 3 - Anxo Varela Hernández -->
+                <div class="text-center">
+                    <div class="w-full h-auto overflow-hidden rounded-full border-4 border-idecon-blue mx-auto mb-4 transform hover:scale-105 transition-transform duration-300">
+                        <img src="images/Anxo_Varela-Hernandez.png" alt="Anxo Varela Hernández" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <p class="font-semibold text-lg">Anxo Varela Hernández</p>
+                </div>
+                <!-- Speaker Card 4 - Higino Vieira -->
+                <div class="text-center">
+                    <div class="w-full h-auto overflow-hidden rounded-full border-4 border-idecon-blue mx-auto mb-4 transform hover:scale-105 transition-transform duration-300">
+                        <img src="images/Higino_Vieira.png" alt="Higino Vieira" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <p class="font-semibold text-lg">Higino Vieira</p>
+                </div>
+                <!-- Speaker Card 5 - Manoel Veríssimo Ferreira Neto -->
+                <div class="text-center">
+                    <div class="w-full h-auto overflow-hidden rounded-full border-4 border-idecon-blue mx-auto mb-4 transform hover:scale-105 transition-transform duration-300">
+                        <img src="images/Manoel_Verissimo_Ferreira_Neto .png" alt="Manoel Veríssimo Ferreira Neto" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <p class="font-semibold text-lg">Manoel Veríssimo Ferreira Neto</p>
+                </div>
+                <!-- Speaker Card 6 - Joelson Dias -->
+                <div class="text-center">
+                    <div class="w-full h-auto overflow-hidden rounded-full border-4 border-idecon-blue mx-auto mb-4 transform hover:scale-105 transition-transform duration-300">
+                        <img src="images/Joelson_Dias.png" alt="Joelson Dias" class="w-full h-full object-cover rounded-full">
+                    </div>
+                    <p class="font-semibold text-lg">Joelson Dias</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer class="py-8 bg-gray-800 text-gray-400 text-center">
+        <div class="container mx-auto px-4">
+            <p>&copy; 2024 IDECON. Todos os direitos reservados.</p>
+        </div>
+    </footer>
+
+    <!-- Modal de Inscrição -->
+    <div id="registrationModal" class="modal">
+        <div class="modal-content text-white">
+            <span class="close-button">&times;</span>
+            <div class="text-center mb-4">
+                <!-- Logo IDECON (Placeholder) -->
+                <div class="flex items-center justify-center space-x-2 mb-2">
+                    <svg width="40" height="40" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2C6.48 2 2 6.48 2 12C2 17.52 6.48 22 12 22C17.52 22 22 17.52 22 12C22 6.48 17.52 2 12 2ZM12 4C16.41 4 20 7.59 20 12C20 16.41 16.41 20 12 20C7.59 20 4 16.41 4 12C4 7.59 7.59 4 12 4ZM10 16.5V7.5L16 12L10 16.5Z" fill="#2e64a1"/>
+                    </svg>
+                    <span class="text-2xl font-bold text-idecon-blue">IDECON</span>
+                </div>
+                <h3 class="text-xl font-bold mb-2">Confirme sua presença preenchendo seus dados para ser direcionado a transmissão oficial.</h3>
+            </div>
+            <!-- Formulário que será submetido para o Google Forms no iframe oculto -->
+            <form id="registrationForm" class="space-y-4" action="https://docs.google.com/forms/d/e/1FAIpQLSf5OruNC66gZkAPRmClFAzaGnoehF7nFVc5pYUQsgqpKdW3eA/formResponse" target="hidden_iframe" method="POST">
+                <!-- Os atributos 'name' são os identificadores dos campos no Google Forms -->
+                <input type="text" id="name" name="entry.973597538" placeholder="Nome e Sobrenome" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-idecon-blue" required>
+                <input type="email" id="email" name="entry.1636197185" placeholder="informeseuemail@email.com" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-idecon-blue" required>
+                <input type="tel" id="whatsapp" name="entry.1140914832" placeholder="Seu WhatsApp (com DDD)" class="w-full p-3 rounded-lg bg-gray-700 text-white border border-gray-600 focus:outline-none focus:border-idecon-blue" required>
+                <button type="submit" id="submitButton" class="w-full bg-idecon-blue hover:bg-sky-600 transition-colors text-white font-bold py-3 rounded-lg">
+                    TER ACESSO À LIVE
+                </button>
+            </form>
+        </div>
+    </div>
+    
+    <!-- Iframe oculto para submissão do formulário -->
+    <iframe name="hidden_iframe" id="hidden_iframe" style="display:none;" onload="if(submitted) {window.location.href = whatsappLink;}"></iframe>
+
+    <!-- Script JavaScript -->
+    <script>
+        // Lógica do Modal em JavaScript
+        const modal = document.getElementById("registrationModal");
+        const openModalBtn = document.getElementById("openModalBtn");
+        const closeBtn = document.getElementsByClassName("close-button")[0];
+        const registrationForm = document.getElementById("registrationForm");
+        const submitButton = document.getElementById("submitButton");
+        const whatsappLink = "https://chat.whatsapp.com/HkoEH07Q4UvGcgLT3Mgq03"; // Link do grupo do WhatsApp
+        let submitted = false; // Variável para controlar a submissão
+
+        // Abre o modal
+        openModalBtn.onclick = function(event) {
+            event.preventDefault();
+            modal.style.display = "block";
+        }
+        
+        // Fecha o modal
+        closeBtn.onclick = function() {
+            modal.style.display = "none";
+        }
+        
+        // Fecha o modal se o usuário clicar fora dele
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.style.display = "none";
+            }
+        }
+        
+        // Manipula a submissão do formulário
+        registrationForm.onsubmit = function(event) {
+            submitted = true; // Marca que o formulário foi submetido
+            
+            // Desabilita o botão e mostra mensagem de carregamento
+            submitButton.disabled = true;
+            submitButton.innerHTML = "Enviando dados...";
+        }
+        
+        // Esta função é chamada quando o iframe oculto termina de carregar
+        document.getElementById('hidden_iframe').onload = function() {
+            // Verifica se o formulário foi submetido e redireciona
+            if (submitted) {
+                window.location.href = whatsappLink;
+            }
+        };
+
+    </script>
+
+</body>
+</html>
